@@ -23,6 +23,10 @@ const CurrencyConverter: React.FC = () => {
 		setToCurrency(e.target.value);
 	};
 
+	const apiKey = process.env.API_KEY;
+
+	console.log(apiKey);
+
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
@@ -30,7 +34,7 @@ const CurrencyConverter: React.FC = () => {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": "9c31a082f7mshc7789afdd7c72e5p1bdde5jsne690e5b35f9e",
+				"X-RapidAPI-Key": apiKey || "",
 				"X-RapidAPI-Host": "currency-converter5.p.rapidapi.com",
 			},
 		};
